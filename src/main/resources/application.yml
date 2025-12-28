@@ -1,0 +1,58 @@
+server:
+  port: 8080
+
+logging:
+  level:
+    com.cct.crypto_trading_sim.filter.JWTFilter: DEBUG
+    org.springframework.security: INFO
+    org.springframework.cache: DEBUG
+    org.ehcache: DEBUG
+    org.springframework.cache.interceptor: TRACE
+
+
+spring:
+  application:
+    name=crypto-trading-sim
+
+  datasource:
+    url: jdbc:h2:mem:cryptodb
+    driver-class-name: org.h2.Driver
+    username: username
+    password: password
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+    database:
+      platform: org.hibernate.dialect.H2Dialect
+
+    defer-datasource-initialization: true
+
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+    settings:
+      trace: true
+
+  sql:
+    init:
+      mode: always
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: slowpoke.122333@gmail.com
+    password: wdxymjhqvwbgqxti
+    default-encoding: UTF-8
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+  cache:
+    type: jcache
