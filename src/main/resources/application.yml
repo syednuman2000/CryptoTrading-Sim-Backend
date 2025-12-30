@@ -7,8 +7,12 @@ logging:
     org.springframework.security: INFO
     org.springframework.cache: DEBUG
     org.ehcache: DEBUG
-    org.springframework.cache.interceptor: TRACE
+    org.springframework.cache.interceptor: INFO
 
+management:
+  endpoint:
+    health:
+      show-details: always
 
 spring:
   application:
